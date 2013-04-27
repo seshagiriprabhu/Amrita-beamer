@@ -11,7 +11,6 @@ files.
 
 $ sudo apt-get install texmaker texlive-full 
 
-
 (only applicable in debian based machines) 
 
 Once you open the tex file using the texmaker, you can run a quick-build to compile and get the PDF file as output. 
