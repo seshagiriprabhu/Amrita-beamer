@@ -30,28 +30,28 @@
 
 \setbeamerfont{section in head/foot}{size=\tiny,series=\normalfont}
 \setbeamerfont{frametitle}{size=\Large}
-
-%\setbeamertemplate{headline}
+%\beamer@sidebarwidth=0pt
+%\setbeamersize{sidebar width left=0cm}
 \setbeamertemplate{frametitle}
 {
   \vskip-0.2\beamer@headheight
   \vskip-\baselineskip
   \vskip-0.2cm
-  \hskip.1cm\usebeamerfont*{frametitle}\insertframetitle
+  \hskip-0.6cm\usebeamerfont*{frametitle}\insertframetitle
   \vskip-0.10em
-  \usebeamerfont*{framesubtitle}\insertframesubtitle
+  \hskip-0.6cm\usebeamerfont*{framesubtitle}\insertframesubtitle
 }
 
 \setbeamertemplate{headline}
 {
   \pgfuseimage{oxygen-header}
   \vskip -1.95cm
-  \linethickness{0.25pt}
+  \linethickness{0pt}
 
   \framelatex{
   \begin{beamercolorbox}[wd=\paperwidth,ht=0.3\beamer@headheight]{Title bar}
     \usebeamerfont{section in head/foot}%
-    \insertsectionnavigationhorizontal{0pt}{\hskip0.22cm}{}%
+   \insertsectionnavigationhorizontal{1pt}{\hskip0.22cm}{}%
   \end{beamercolorbox}}
 
   \framelatex{
@@ -61,7 +61,7 @@
 
 \setbeamertemplate{footline}
 {
-  \linethickness{0.25pt}
+  \linethickness{0pt}
   \framelatex{
   \begin{beamercolorbox}[leftskip=.3cm,wd=\paperwidth,ht=0.3\beamer@headheight,sep=0.1cm]{Location bar}
     \usebeamerfont{section in head/foot}%
@@ -71,3 +71,19 @@
   \end{beamercolorbox}}
 }
 
+\setbeamertemplate{section in sidebar}%{sidebar theme}
+{%
+  \vbox{%
+    \vskip1ex%
+    \beamer@sidebarformat{3pt}{section in sidebar}{\insertsectionheadnumber
+~\insertsectionhead}%
+  }%
+}
+\setbeamertemplate{section in sidebar shaded}%{sidebar theme}
+{%
+  \vbox{%
+    \vskip1ex%
+    \beamer@sidebarformat{3pt}{section in sidebar shaded}{\insertsectionheadnumber
+~\insertsectionhead}%
+  }%
+}
